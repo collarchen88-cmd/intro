@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About · Collar Chen</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0 20px;
+            position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 2px 10px rgba(102,126,234,0.3);
+        }
+
+        .nav-inner {
+            max-width: 800px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 56px;
+        }
+
+        .nav-brand { color: white; font-weight: 700; font-size: 18px; text-decoration: none; }
+        .nav-links { display: flex; gap: 4px; list-style: none; }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8); text-decoration: none;
+            padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,255,255,0.2); color: white;
+        }
+
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+
+        .page-title {
+            font-size: 28px; color: #2d3748; margin-bottom: 6px; text-align: center;
+        }
+
+        .page-subtitle {
+            text-align: center; color: #667eea; font-size: 15px; margin-bottom: 36px;
+        }
+
+        .timeline { position: relative; }
+
+        .timeline::before {
+            content: '';
+            position: absolute; left: 19px; top: 0; bottom: 0;
+            width: 2px; background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .tl-item {
+            position: relative; padding-left: 56px; margin-bottom: 36px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .tl-dot {
+            position: absolute; left: 12px; top: 2px;
+            width: 16px; height: 16px; border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 3px solid #f0f2f5;
+        }
+
+        .tl-card {
+            background: white; border-radius: 16px; padding: 24px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        .tl-card h3 { font-size: 17px; color: #2d3748; margin-bottom: 4px; }
+        .tl-card .period { font-size: 13px; color: #667eea; font-weight: 500; margin-bottom: 12px; }
+        .tl-card p { font-size: 15px; color: #4a5568; line-height: 1.8; }
+
+        .skill-tags {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+        }
+
+        .skill-tags span {
+            padding: 4px 14px; border-radius: 20px;
+            background: rgba(102,126,234,0.1); color: #667eea;
+            font-size: 13px; font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .nav-inner { flex-direction: column; height: auto; padding: 12px 0; gap: 8px; }
+            .tl-card { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Collar Chen</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">关于我</h1>
+        <p class="page-subtitle">十年外贸，从业务到运营</p>
+
+        <div class="timeline">
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <h3>外贸业务员</h3>
+                    <div class="period">前 7 年</div>
+                    <p>从一线业务做起，熟悉外贸全流程——客户开发、询盘跟进、订单处理、物流协调、售后服务。积累了大量国际客户沟通经验，深度理解买家需求和痛点。</p>
+                    <div class="skill-tags">
+                        <span>客户开发</span><span>订单管理</span><span>商务谈判</span><span>供应链协调</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <h3>外贸运营</h3>
+                    <div class="period">3+ 年</div>
+                    <p>从阿里巴巴国际站运营起步，深入学习平台规则和流量逻辑。后续转向独立网站运营，负责站点搭建、SEO 优化、内容策略和数据分析，打通了从平台引流到独立站转化的闭环。</p>
+                    <div class="skill-tags">
+                        <span>阿里国际站</span><span>独立站搭建</span><span>SEO</span><span>数据分析</span><span>Google Analytics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <h3>AI + 外贸运营</h3>
+                    <div class="period">当前阶段</div>
+                    <p>AI 正在重塑各行各业，外贸运营也不例外。我正积极学习和实践 AI 在网站运营中的应用——从内容生成、SEO 优化到数据分析自动化，探索用 AI 提升运营效率的切实路径。</p>
+                    <div class="skill-tags">
+                        <span>AI 工具</span><span>Claude Code</span><span>自动化</span><span>效率提升</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

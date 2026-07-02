@@ -3,280 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>外贸运营 · 个人介绍</title>
+    <title>Home · Collar Chen</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f0f2f5;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
         }
 
-        .card {
+        /* 导航栏 */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+
+        .nav-brand {
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        /* 页面容器 */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* 首页 Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 40px;
             background: white;
             border-radius: 20px;
-            padding: 60px 40px;
-            max-width: 480px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
             animation: fadeIn 0.8s ease;
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0 auto 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 42px;
-            color: white;
-            font-weight: 600;
+            width: 100px; height: 100px; border-radius: 50%;
+            background: var(--gradient);
+            margin: 0 auto 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 42px; color: white; font-weight: 600;
         }
 
-        h1 {
-            font-size: 28px;
-            color: #2d3748;
-            margin-bottom: 8px;
+        .hero h1 { font-size: 28px; color: #2d3748; margin-bottom: 6px; }
+
+        .hero .tagline {
+            font-size: 15px; color: #667eea; margin-bottom: 20px; font-weight: 500;
         }
 
-        .tagline {
-            font-size: 15px;
-            color: #667eea;
-            margin-bottom: 24px;
-            font-weight: 500;
+        .hero .divider {
+            width: 50px; height: 3px; background: var(--gradient);
+            margin: 0 auto 20px; border-radius: 2px;
         }
 
-        .divider {
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0 auto 24px;
-            border-radius: 2px;
+        .hero .bio {
+            font-size: 16px; color: #4a5568; line-height: 1.9;
+            max-width: 400px; margin: 0 auto 28px;
         }
 
-        .bio {
-            font-size: 16px;
-            color: #4a5568;
-            line-height: 1.8;
-            margin-bottom: 28px;
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        .timeline {
-            text-align: left;
-            margin-bottom: 32px;
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 14px;
-            margin-bottom: 16px;
-            align-items: flex-start;
-        }
-
-        .timeline-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #667eea;
-            margin-top: 6px;
-            flex-shrink: 0;
-        }
-
-        .timeline-content h3 {
-            font-size: 14px;
-            color: #2d3748;
-            margin-bottom: 2px;
-        }
-
-        .timeline-content p {
-            font-size: 13px;
-            color: #718096;
-        }
-
-        .action-section {
-            text-align: left;
-            background: #f7fafc;
-            border-radius: 12px;
-            padding: 24px 20px;
-            margin-bottom: 32px;
-            border-left: 3px solid #667eea;
-        }
-
-        .action-section h2 {
-            font-size: 16px;
-            color: #2d3748;
-            margin-bottom: 16px;
-            text-align: center;
-        }
-
-        .action-item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 12px;
-            align-items: flex-start;
-        }
-
-        .action-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .action-num {
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            font-size: 13px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .action-item p {
-            font-size: 14px;
-            color: #4a5568;
-            line-height: 1.7;
-        }
-
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 10px 20px;
-            border-radius: 50px;
+        .preview-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 24px;
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            transition: all 0.25s;
+            display: block;
         }
 
-        .link-email {
-            background: #edf2f7;
-            color: #4a5568;
+        .preview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(102,126,234,0.15);
         }
 
-        .link-email:hover {
-            background: #e2e8f0;
-            transform: translateY(-2px);
+        .preview-card .icon { font-size: 32px; margin-bottom: 12px; }
+
+        .preview-card h3 {
+            font-size: 18px; color: #2d3748; margin-bottom: 8px;
         }
 
-        .link-github {
-            background: #2d3748;
-            color: white;
+        .preview-card p {
+            font-size: 14px; color: #718096; line-height: 1.7;
         }
 
-        .link-github:hover {
-            background: #1a202c;
-            transform: translateY(-2px);
+        .preview-card .arrow {
+            display: inline-block; margin-top: 14px;
+            font-size: 14px; color: #667eea; font-weight: 500;
         }
 
-        .footer {
-            margin-top: 36px;
-            font-size: 13px;
-            color: #a0aec0;
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .hero { padding: 40px 24px; }
+            .nav-inner { flex-direction: column; height: auto; padding: 12px 0; gap: 8px; }
+            .card-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <!-- 头像：改成你的名字首字母，或者换成图片 <img src="your-photo.jpg"> -->
-        <div class="avatar">C</div>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Collar Chen</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- 名字 -->
-        <h1>Collar Chen</h1>
-
-        <!-- 一句话介绍 -->
-        <p class="tagline">十年外贸经验 · 从业务到运营</p>
-
-        <div class="divider"></div>
-
-        <!-- 自我介绍 -->
-        <p class="bio">
-            你好！我是一名拥有十年外贸经验的从业者。
-        </p>
-
-        <!-- 经历时间线 -->
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>外贸业务员（前7年）</h3>
-                    <p>从一线业务做起，熟悉外贸全流程，积累了大量客户沟通与订单处理经验。</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>外贸运营（3+年）</h3>
-                    <p>从阿里巴巴国际站运营起步，逐步转向独立网站运营，负责站点搭建、SEO 优化和数据分析。</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>AI + 外贸运营（当前）</h3>
-                    <p>AI 对各行各业的冲击巨大，外贸运营也不例外。感叹之余，更重要的是行动起来。</p>
-                </div>
-            </div>
+    <!-- 主体 -->
+    <div class="container">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="avatar">C</div>
+            <h1>Collar Chen</h1>
+            <p class="tagline">十年外贸经验 · 从业务到运营</p>
+            <div class="divider"></div>
+            <p class="bio">
+                你好！我是一名拥有十年外贸经验的从业者，从一线业务到独立网站运营，现在正探索 AI 如何为外贸运营赋能。
+            </p>
         </div>
 
-        <!-- 行动指南 -->
-        <div class="action-section">
-            <h2>🤖 AI 时代，行动起来</h2>
-            <div class="action-item">
-                <div class="action-num">1</div>
-                <p><strong>先把插件装好</strong>——Claude Code、Codex 等 AI 工具先配起来，这是第一步。</p>
-            </div>
-            <div class="action-item">
-                <div class="action-num">2</div>
-                <p><strong>别想太复杂</strong>——从最简单的事情开始，不要一上来就追求完美方案。</p>
-            </div>
-            <div class="action-item">
-                <div class="action-num">3</div>
-                <p><strong>从最小闭环开始</strong>——不用做出多复杂的效果，先解决自己工作中的最小闭环，跑通再说。</p>
-            </div>
+        <!-- 快捷入口 -->
+        <div class="card-grid">
+            <a href="about.html" class="preview-card">
+                <div class="icon">👤</div>
+                <h3>关于我</h3>
+                <p>十年外贸经历，从业务员到运营，一路走来的故事。</p>
+                <span class="arrow">了解更多 →</span>
+            </a>
+            <a href="blog.html" class="preview-card">
+                <div class="icon">🤖</div>
+                <h3>AI 实践</h3>
+                <p>AI 时代如何行动？我的思考和三点建议。</p>
+                <span class="arrow">了解更多 →</span>
+            </a>
+            <a href="contact.html" class="preview-card">
+                <div class="icon">📬</div>
+                <h3>联系方式</h3>
+                <p>欢迎交流外贸、运营和 AI 相关话题。</p>
+                <span class="arrow">了解更多 →</span>
+            </a>
         </div>
-
-        <!-- 联系方式 -->
-        <div class="links">
-            <a href="mailto:yourname@example.com" class="link-email">📧 邮箱</a>
-            <a href="https://github.com" class="link-github" target="_blank">💻 GitHub</a>
-        </div>
-
-        <p class="footer">很高兴认识你 👋</p>
     </div>
 </body>
 </html>

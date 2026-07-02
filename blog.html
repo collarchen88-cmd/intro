@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog · Collar Chen</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f0f2f5; min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0 20px; position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 2px 10px rgba(102,126,234,0.3);
+        }
+
+        .nav-inner {
+            max-width: 800px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 56px;
+        }
+
+        .nav-brand { color: white; font-weight: 700; font-size: 18px; text-decoration: none; }
+        .nav-links { display: flex; gap: 4px; list-style: none; }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8); text-decoration: none;
+            padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,255,255,0.2); color: white;
+        }
+
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+
+        .page-title {
+            font-size: 28px; color: #2d3748; margin-bottom: 6px; text-align: center;
+        }
+
+        .page-subtitle {
+            text-align: center; color: #667eea; font-size: 15px; margin-bottom: 36px;
+        }
+
+        .article {
+            background: white; border-radius: 20px; padding: 36px 32px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            margin-bottom: 28px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .article h2 {
+            font-size: 22px; color: #2d3748; margin-bottom: 20px;
+            padding-bottom: 16px; border-bottom: 2px solid #f0f2f5;
+        }
+
+        .article .intro {
+            font-size: 16px; color: #4a5568; line-height: 1.9; margin-bottom: 28px;
+        }
+
+        .article .intro strong { color: #2d3748; }
+
+        .action-list { list-style: none; }
+
+        .action-list li {
+            display: flex; gap: 16px; margin-bottom: 24px;
+            padding: 20px; background: #f7fafc; border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: all 0.2s;
+        }
+
+        .action-list li:hover { background: #eef2ff; }
+
+        .action-list .num {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; font-size: 16px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .action-list .text h3 { font-size: 16px; color: #2d3748; margin-bottom: 6px; }
+
+        .action-list .text p {
+            font-size: 14px; color: #718096; line-height: 1.7;
+        }
+
+        .quote {
+            text-align: center; padding: 28px;
+            background: white; border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            margin-top: 28px;
+        }
+
+        .quote p {
+            font-size: 18px; color: #667eea; font-weight: 500;
+            line-height: 1.8; font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .nav-inner { flex-direction: column; height: auto; padding: 12px 0; gap: 8px; }
+            .article { padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Collar Chen</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">AI 实践</h1>
+        <p class="page-subtitle">在 AI 时代，行动起来</p>
+
+        <div class="article">
+            <h2>🤖 AI 时代，外贸运营如何应对？</h2>
+
+            <p class="intro">
+                AI 对各行各业的冲击是巨大的，外贸运营也不例外。从内容生成到数据分析，从 SEO 优化到客户沟通，<strong>AI 正在重新定义运营的工作方式</strong>。感叹之余，更重要的是——<strong>行动起来</strong>。
+            </p>
+
+            <p class="intro">
+                行动的关键并不复杂，我认为最重要的是克服以下三点：
+            </p>
+
+            <ol class="action-list">
+                <li>
+                    <div class="num">1</div>
+                    <div class="text">
+                        <h3>先把工具装好</h3>
+                        <p>Claude Code、Codex 等 AI 工具先配起来，把环境搭建好。工具没装好，一切都无从谈起。这是第一步，也是最重要的一步。</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="num">2</div>
+                    <div class="text">
+                        <h3>别想太复杂</h3>
+                        <p>不要一上来就追求完美方案，不要想着要学完所有东西再开始。从最简单的事情入手，先动起来再说。</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="num">3</div>
+                    <div class="text">
+                        <h3>从最小闭环开始</h3>
+                        <p>不用做出多复杂的效果，先解决自己工作中的最小闭环。跑通一个完整的流程，比纸上谈兵强一百倍。</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="quote">
+            <p>"AI 不会淘汰你，但会用 AI 的人会。"</p>
+        </div>
+    </div>
+</body>
+</html>

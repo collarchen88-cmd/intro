@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact · Collar Chen</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f0f2f5; min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0 20px; position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 2px 10px rgba(102,126,234,0.3);
+        }
+
+        .nav-inner {
+            max-width: 800px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 56px;
+        }
+
+        .nav-brand { color: white; font-weight: 700; font-size: 18px; text-decoration: none; }
+        .nav-links { display: flex; gap: 4px; list-style: none; }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8); text-decoration: none;
+            padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,255,255,0.2); color: white;
+        }
+
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+
+        .page-title {
+            font-size: 28px; color: #2d3748; margin-bottom: 6px; text-align: center;
+        }
+
+        .page-subtitle {
+            text-align: center; color: #667eea; font-size: 15px; margin-bottom: 36px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: white; border-radius: 16px; padding: 28px 24px;
+            text-align: center; text-decoration: none;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            transition: all 0.25s;
+            display: block;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(102,126,234,0.15);
+        }
+
+        .contact-card .icon { font-size: 36px; margin-bottom: 12px; }
+
+        .contact-card h3 {
+            font-size: 17px; color: #2d3748; margin-bottom: 6px;
+        }
+
+        .contact-card p {
+            font-size: 14px; color: #718096;
+        }
+
+        .contact-card .handle {
+            display: inline-block; margin-top: 10px;
+            padding: 6px 16px; border-radius: 20px;
+            background: #f0f2f5; color: #667eea;
+            font-size: 13px; font-weight: 500;
+        }
+
+        .message-box {
+            margin-top: 28px;
+            background: white; border-radius: 20px; padding: 36px 32px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        .message-box h3 {
+            font-size: 18px; color: #2d3748; margin-bottom: 8px;
+        }
+
+        .message-box p {
+            font-size: 15px; color: #4a5568; line-height: 1.8;
+        }
+
+        @media (max-width: 600px) {
+            .nav-inner { flex-direction: column; height: auto; padding: 12px 0; gap: 8px; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Collar Chen</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">联系方式</h1>
+        <p class="page-subtitle">欢迎交流外贸、运营和 AI 相关话题</p>
+
+        <div class="contact-grid">
+            <a href="mailto:yourname@example.com" class="contact-card">
+                <div class="icon">📧</div>
+                <h3>邮箱</h3>
+                <p>发送邮件给我</p>
+                <span class="handle">yourname@example.com</span>
+            </a>
+
+            <a href="https://github.com/collarchen88-cmd" target="_blank" class="contact-card">
+                <div class="icon">💻</div>
+                <h3>GitHub</h3>
+                <p>代码和项目</p>
+                <span class="handle">@collarchen88-cmd</span>
+            </a>
+
+            <div class="contact-card">
+                <div class="icon">🌐</div>
+                <h3>网站</h3>
+                <p>独立站运营经验分享</p>
+                <span class="handle">coming soon</span>
+            </div>
+
+            <div class="contact-card">
+                <div class="icon">💬</div>
+                <h3>微信 / 领英</h3>
+                <p>添加好友交流</p>
+                <span class="handle">扫码或搜索</span>
+            </div>
+        </div>
+
+        <div class="message-box">
+            <h3>"保持联系"</h3>
+            <p>
+                无论是外贸运营、AI 工具还是独立站，<br>
+                如果你也在探索这些方向，欢迎随时交流！
+            </p>
+        </div>
+    </div>
+</body>
+</html>
